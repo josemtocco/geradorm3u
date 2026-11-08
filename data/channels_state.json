@@ -1,4 +1,14 @@
 {
-  "channels": {},
-  "last_update": "2026-11-08T14:13:19.783734+00:00"
+  "channels": {
+    "fa90d2e81626b42f": {
+      "name": "Canal",
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-802KDW3REV",
+      "category": "Outros",
+      "logo": null,
+      "fail_count": 0,
+      "last_seen": "2026-11-08T14:15:22.931661+00:00",
+      "first_seen": "2026-11-08T14:15:22.931661+00:00"
+    }
+  },
+  "last_update": "2026-11-08T14:15:22.931661+00:00"
 }
