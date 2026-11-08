@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Gerador robusto de lista M3U otimizada para SS IPTV.
-- Fonte configurável (placeholder https://www.olhosnatv.com.br/)
+- Fonte configurável (placeholder https://www.cxtv.com.br/tv/paises/tvs-brasil)
 - Análise heurística da página + suporte a categorias e "carregar mais"
 - Mesclagem inteligente de categorias (sinônimos / case-insensitive)
 - Deduplicação por URL de stream
@@ -28,7 +28,7 @@ from bs4 import BeautifulSoup
 # ---------------------------------------------------------------------------
 # CONFIGURAÇÃO PRINCIPAL - ALTERE AQUI
 # ---------------------------------------------------------------------------
-SOURCE_URL = "https://www.olhosnatv.com.br/"   # <-- COLOQUE A URL DA FONTE AQUI
+SOURCE_URL = "https://www.cxtv.com.br/tv/paises/tvs-brasil"   # <-- COLOQUE A URL DA FONTE AQUI
 
 # Arquivos de estado e saída
 STATE_FILE = "data/channels_state.json"
