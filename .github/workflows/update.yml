@@ -1,1 +1,51 @@
+name: Atualizar Lista M3U
 
+on:
+  schedule:
+    # A cada 6 horas (UTC)
+    - cron: "0 */6 * * *"
+  workflow_dispatch:   # permite rodar manualmente
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Criar pasta de dados
+        run: mkdir -p data
+
+      - name: Executar gerador
+        run: python generator.py
+        env:
+          # Se precisar de proxy ou headers extras, use secrets aqui
+          PYTHONUNBUFFERED: "1"
+
+      - name: Commit e push da playlist atualizada
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add playlist.m3u data/channels_state.json || true
+          if git diff --staged --quiet; then
+            echo "Nenhuma alteração detectada."
+          else
+            git commit -m "Atualização automática da lista M3U $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
