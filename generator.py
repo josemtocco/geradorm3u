@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Gerador robusto de lista M3U otimizada para SS IPTV.
-- Fonte configurável (placeholder https://www.cxtv.com.br/tv/paises/tvs-brasil)
+- Fonte configurável (placeholder https://www.megacanais.online/)
 - Análise heurística da página + suporte a categorias e "carregar mais"
 - Mesclagem inteligente de categorias (sinônimos / case-insensitive)
 - Deduplicação por URL de stream
