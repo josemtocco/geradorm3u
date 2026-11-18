@@ -28,7 +28,7 @@ from bs4 import BeautifulSoup
 # ---------------------------------------------------------------------------
 # CONFIGURAÇÃO PRINCIPAL - ALTERE AQUI
 # ---------------------------------------------------------------------------
-SOURCE_URL = "https://www.cxtv.com.br/tv/paises/tvs-brasil"   # <-- COLOQUE A URL DA FONTE AQUI
+SOURCE_URL = "https://www.megacanais.online/"   # <-- COLOQUE A URL DA FONTE AQUI
 
 # Arquivos de estado e saída
 STATE_FILE = "data/channels_state.json"
@@ -609,10 +609,10 @@ def generate_m3u(channels: List[Dict], output_path: str):
 # MAIN
 # ---------------------------------------------------------------------------
 def main():
-    if SOURCE_URL.strip() in ("", "xxxxxxxxxxxxxxxxxx"):
+    if SOURCE_URL.strip() in ("", "https://www.megacanais.online/"):
         log.error(
             "SOURCE_URL ainda está com o placeholder!\n"
-            "Abra generator.py e substitua 'xxxxxxxxxxxxxxxxxx' pela URL real da fonte."
+            "Abra generator.py e substitua 'https://www.megacanais.online/' pela URL real da fonte."
         )
         return 1
 
